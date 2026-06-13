@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2024-01-01T00:00:00.000Z" agent="Amazon Q" version="21.0.0">
+  <diagram id="migration-architecture" name="SMArT Migration Architecture">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ===== PAGE TITLE ===== -->
+        <mxCell id="title" value="SMArT Application – Architecture Migration: Dataiku DSS → Databricks" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
+          <mxGeometry x="200" y="20" width="1254" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ===== CURRENT ARCHITECTURE PANEL ===== -->
+        <mxCell id="current-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;opacity=50;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="620" height="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="current-title" value="🔴  CURRENT ARCHITECTURE" style="text;html=1;strokeColor=#d6b656;fillColor=#ffe6cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=15;fontStyle=1;fontColor=#7d4e00;" vertex="1" parent="1">
+          <mxGeometry x="60" y="90" width="580" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Current: Users -->
+        <mxCell id="c-users" value="👤 End Users" style="shape=mxgraph.aws4.user;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="280" y="160" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c-users-lbl" value="End Users" style="text;html=1;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="265" y="225" width="90" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Current: Dataiku DSS Platform Box -->
+        <mxCell id="c-dss-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;opacity=40;" vertex="1" parent="1">
+          <mxGeometry x="60" y="270" width="520" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="c-dss-label" value="Dataiku DSS Platform" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=10;fontStyle=3;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="70" y="275" width="200" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Current: React Frontend -->
+        <mxCell id="c-react" value="⚛️ React Frontend" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="300" width="280" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Current: Flask Backend -->
+        <mxCell id="c-flask" value="🐍 Flask Backend (REST API)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="390" width="280" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Current: 3 Isolated DSS Instances -->
+        <mxCell id="c-dev" value="DEV Instance" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="480" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c-uat" value="UAT Instance" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="245" y="480" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c-prod" value="PROD Instance" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="410" y="480" width="130" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Current: Manual Deployment -->
+        <mxCell id="c-deploy" value="🔧 Manual DSS Bundle Deployment&#xa;(Platform Team)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#ffffff;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="550" width="280" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Current: Snowflake Box -->
+        <mxCell id="c-snow-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;opacity=40;" vertex="1" parent="1">
+          <mxGeometry x="60" y="640" width="520" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="c-snow-label" value="Snowflake Data Warehouse" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=10;fontStyle=3;fontColor=#00538b;" vertex="1" parent="1">
+          <mxGeometry x="70" y="645" width="220" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="c-snow-icon" value="❄️ Snowflake" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="670" width="280" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="c-snow-tables" value="14 Tables  |  &lt; 100 GB  |  No Unity Catalog" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="120" y="740" width="380" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="c-no-ai" value="🚫 No AI / ML Capabilities" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="790" width="280" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Current: Pain Points -->
+        <mxCell id="c-pain" value="⚠️ Pain Points&#xa;• Manual deployments → errors&#xa;• 3 separate DSS instances to manage&#xa;• No AI/ML support&#xa;• Limited governance" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#b85450;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="60" y="870" width="520" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Current: Arrows -->
+        <mxCell id="c-arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="c-users" target="c-react">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c-arr2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="c-react" target="c-flask">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c-arr3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="c-flask" target="c-snow-icon">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== MIGRATION BANNER (CENTER) ===== -->
+        <mxCell id="mig-label-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FF8000;strokeColor=#FF8000;" vertex="1" parent="1">
+          <mxGeometry x="671" y="545" width="312" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="mig-label" value="🚀 MIGRATION" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="671" y="545" width="312" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mig-label2" value="Dataiku DSS  →  Databricks" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="671" y="575" width="312" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Key Changes Box -->
+        <mxCell id="changes-box" value="Key Changes&#xa;─────────────────&#xa;✅ Platform: Dataiku → Databricks&#xa;✅ DB: Snowflake → Delta Lake&#xa;✅ Deploy: Manual → CI/CD&#xa;✅ Env: Separate → RBAC Schemas&#xa;✅ AI: None → Genie AI&#xa;⬛ Framework: React + Flask (same)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff9e6;strokeColor=#FF8000;strokeWidth=2;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="671" y="640" width="312" height="160" as="geometry" />
+        </mxCell>
+
+        <!-- Benefits Box -->
+        <mxCell id="benefits-box" value="Key Benefits&#xa;─────────────────&#xa;🚀 Automated CI/CD deployments&#xa;🔒 Unity Catalog governance&#xa;🤖 Genie AI enabled&#xa;📦 RBAC schema isolation&#xa;⚙️ Reduced operational overhead&#xa;♻️ React + Flask reused as-is" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6ffe6;strokeColor=#00aa00;strokeWidth=2;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="671" y="820" width="312" height="160" as="geometry" />
+        </mxCell>
+
+        <!-- ===== TARGET ARCHITECTURE PANEL ===== -->
+        <mxCell id="target-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;opacity=50;" vertex="1" parent="1">
+          <mxGeometry x="994" y="80" width="620" height="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="target-title" value="🟢  TARGET ARCHITECTURE" style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=15;fontStyle=1;fontColor=#1a5c1a;" vertex="1" parent="1">
+          <mxGeometry x="1014" y="90" width="580" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Target: Users -->
+        <mxCell id="t-users" value="👤 End Users" style="shape=mxgraph.aws4.user;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1234" y="160" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t-users-lbl" value="End Users" style="text;html=1;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1219" y="225" width="90" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Target: Databricks Apps Platform Box -->
+        <mxCell id="t-dbx-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#FF8000;strokeWidth=2;opacity=40;" vertex="1" parent="1">
+          <mxGeometry x="1014" y="270" width="580" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="t-dbx-label" value="Databricks Apps Platform  (ATP GPD Expl)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=10;fontStyle=3;fontColor=#FF6600;" vertex="1" parent="1">
+          <mxGeometry x="1024" y="275" width="300" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Target: React Frontend -->
+        <mxCell id="t-react" value="⚛️ React Frontend  (unchanged)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1124" y="300" width="280" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Target: Flask Backend -->
+        <mxCell id="t-flask" value="🐍 Flask Backend (REST API)  (unchanged)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1124" y="390" width="280" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Target: 3 RBAC Schema Environments -->
+        <mxCell id="t-dev" value="DEV Schema" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1034" y="480" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="t-uat" value="UAT Schema" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1199" y="480" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="t-prod" value="PROD Schema" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1364" y="480" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="t-rbac" value="🔒 RBAC Isolated  |  Single Catalog" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=9;fontColor=#1a5c1a;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="1014" y="525" width="580" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Target: CI/CD -->
+        <mxCell id="t-cicd" value="⚡ CI/CD Pipeline&#xa;GitHub Actions + DAB (Automated)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00aa00;strokeColor=#006600;fontColor=#ffffff;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1124" y="550" width="280" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Target: Delta Lake / Unity Catalog Box -->
+        <mxCell id="t-dl-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#FF8000;strokeWidth=2;opacity=40;" vertex="1" parent="1">
+          <mxGeometry x="1014" y="640" width="580" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="t-dl-label" value="Delta Lake  |  Unity Catalog (Centralized Governance)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=10;fontStyle=3;fontColor=#FF6600;" vertex="1" parent="1">
+          <mxGeometry x="1024" y="645" width="360" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="t-dl-icon" value="🔷 Delta Lake" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1124" y="670" width="280" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="t-dl-tables" value="14 Tables Migrated  |  &lt; 100 GB  |  Unity Catalog" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1074" y="740" width="380" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="t-ai" value="🤖 Genie AI  (Databricks AI/ML)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#00aa00;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1124" y="790" width="280" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Target: Outcomes -->
+        <mxCell id="t-benefits" value="✅ Outcomes&#xa;• Automated deployments via GitHub Actions + DAB&#xa;• Unified governance via Unity Catalog&#xa;• RBAC schema isolation (dev/uat/prod)&#xa;• Genie AI/ML capabilities unlocked" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ccffcc;strokeColor=#82b366;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1014" y="870" width="580" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Target: Arrows -->
+        <mxCell id="t-arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="t-users" target="t-react">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t-arr2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="t-react" target="t-flask">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t-arr3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="t-flask" target="t-dl-icon">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t-arr4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;dashed=1;strokeColor=#00aa00;" edge="1" parent="1" source="t-cicd" target="t-dev">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t-arr5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;dashed=1;strokeColor=#00aa00;" edge="1" parent="1" source="t-cicd" target="t-uat">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t-arr6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;dashed=1;strokeColor=#00aa00;" edge="1" parent="1" source="t-cicd" target="t-prod">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== COMPARISON TABLE ===== -->
+        <mxCell id="table-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1120" width="1574" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="table-title" value="Architecture Comparison Summary" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1125" width="1574" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Table Left Headers -->
+        <mxCell id="th-cat" value="Category" style="text;html=1;strokeColor=#666;fillColor=#dae8fc;align=center;fontStyle=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1160" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="th-cur" value="Current (Dataiku + Snowflake)" style="text;html=1;strokeColor=#666;fillColor=#f8cecc;align=center;fontStyle=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="215" y="1160" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="th-tgt" value="Target (Databricks + Delta Lake)" style="text;html=1;strokeColor=#666;fillColor=#d5e8d4;align=center;fontStyle=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="570" y="1160" width="350" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Table Right Headers -->
+        <mxCell id="th-cat2" value="Category" style="text;html=1;strokeColor=#666;fillColor=#dae8fc;align=center;fontStyle=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="930" y="1160" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="th-cur2" value="Current (Dataiku + Snowflake)" style="text;html=1;strokeColor=#666;fillColor=#f8cecc;align=center;fontStyle=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1095" y="1160" width="250" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="th-tgt2" value="Target (Databricks + Delta Lake)" style="text;html=1;strokeColor=#666;fillColor=#d5e8d4;align=center;fontStyle=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1350" y="1160" width="250" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Left Table Row 1: Platform -->
+        <mxCell id="r1c1" value="Platform" style="text;html=1;strokeColor=#ccc;fillColor=#fff;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1195" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="r1c2" value="Dataiku DSS" style="text;html=1;strokeColor=#ccc;fillColor=#fff;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="215" y="1195" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="r1c3" value="Databricks Apps (ATP GPD Expl)" style="text;html=1;strokeColor=#ccc;fillColor=#fff;align=center;fontSize=10;fontColor=#006600;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="570" y="1195" width="350" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Left Table Row 2: Database -->
+        <mxCell id="r2c1" value="Database" style="text;html=1;strokeColor=#ccc;fillColor=#f5f5f5;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1230" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="r2c2" value="Snowflake (14 tables, &lt;100 GB)" style="text;html=1;strokeColor=#ccc;fillColor=#f5f5f5;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="215" y="1230" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="r2c3" value="Delta Lake (Unity Catalog, dedicated)" style="text;html=1;strokeColor=#ccc;fillColor=#f5f5f5;align=center;fontSize=10;fontColor=#006600;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="570" y="1230" width="350" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Left Table Row 3: Deployment -->
+        <mxCell id="r3c1" value="Deployment" style="text;html=1;strokeColor=#ccc;fillColor=#fff;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1265" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="r3c2" value="Manual DSS Bundle – Platform Team" style="text;html=1;strokeColor=#ccc;fillColor=#fff;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="215" y="1265" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="r3c3" value="CI/CD (GitHub Actions + DAB, automated)" style="text;html=1;strokeColor=#ccc;fillColor=#fff;align=center;fontSize=10;fontColor=#006600;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="570" y="1265" width="350" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Right Table Row 1: Environments -->
+        <mxCell id="r4c1" value="Environments" style="text;html=1;strokeColor=#ccc;fillColor=#f5f5f5;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="930" y="1195" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="r4c2" value="3 physically isolated DSS instances" style="text;html=1;strokeColor=#ccc;fillColor=#f5f5f5;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1095" y="1195" width="250" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="r4c3" value="3 schemas in one catalog (RBAC)" style="text;html=1;strokeColor=#ccc;fillColor=#f5f5f5;align=center;fontSize=10;fontColor=#006600;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1350" y="1195" width="250" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Right Table Row 2: AI/ML -->
+        <mxCell id="r5c1" value="AI / ML" style="text;html=1;strokeColor=#ccc;fillColor=#fff;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="930" y="1230" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="r5c2" value="Not available" style="text;html=1;strokeColor=#ccc;fillColor=#fff;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1095" y="1230" width="250" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="r5c3" value="Genie AI ✓" style="text;html=1;strokeColor=#ccc;fillColor=#fff;align=center;fontSize=10;fontColor=#006600;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1350" y="1230" width="250" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Right Table Row 3: Framework -->
+        <mxCell id="r6c1" value="Framework" style="text;html=1;strokeColor=#ccc;fillColor=#f5f5f5;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="930" y="1265" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="r6c2" value="React + Flask" style="text;html=1;strokeColor=#ccc;fillColor=#f5f5f5;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1095" y="1265" width="250" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="r6c3" value="React + Flask (unchanged ♻️)" style="text;html=1;strokeColor=#ccc;fillColor=#f5f5f5;align=center;fontSize=10;fontColor=#006600;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1350" y="1265" width="250" height="30" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
